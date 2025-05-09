@@ -7,10 +7,8 @@ export function startREPL(state: State) {
       const words = cleanInput(input);
       if (words.length === 0) {
         state.io.prompt()
-        //return
       }
 
-      //console.log(`Your command was: ${words[0]}`)
       const command = state.commands[words[0]]
       await command.callback(state)
       state.io.prompt()
