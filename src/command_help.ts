@@ -1,5 +1,5 @@
 import type { State } from './state';
-export function commandHelp(state: State) {
+export async function commandHelp(state: State) {
   console.log("Welcome to the Pokedex!")
   console.log("Usage: \n")
   for (const c in state.commands) {

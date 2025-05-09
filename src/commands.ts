@@ -2,6 +2,7 @@ import { commandExit } from "./command_exit.js";
 import { commandHelp } from "./command_help.js";
 import { commandMap } from "./command_map.js";
 import { commandMapb } from "./command_mapb.js";
+import type { State } from "./state.js";
 
 export function getCommands() {
   return {
@@ -24,6 +25,11 @@ export function getCommands() {
       name: "mapb",
       description: "Moves 20 location-areas backwards",
       callback: commandMapb,
+    },
+    debug: {
+      name: "debug",
+      description: "debug",
+      callback: async (state: State) => console.log(JSON.stringify(state.poke, null, 2)),
     }
   }
 }
