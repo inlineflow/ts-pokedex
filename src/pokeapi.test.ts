@@ -31,7 +31,7 @@ describe.each([
   test(`Expected: ${expected}`, async () => {
     const poke = new PokeAPI();
     const locations = await poke.fetchLocations()
-    const actual = locations.results.map(loc => loc.name);
+    const actual = locations.map(loc => loc.name);
 
     for (let i = 0; i < expected.length; i++) {
       expect(actual[i]).toBe(expected[i]);
